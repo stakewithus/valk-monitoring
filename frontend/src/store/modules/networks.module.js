@@ -102,18 +102,17 @@ const getters = {
 
 const actions = {
   async getLatestChainIds({ commit }) {
-    const result = await StakeApi.get("/latest_chain_ids");
+    // const result = await StakeApi.get("/latest_chain_ids");
+    const result = [];
     result['cosmos'] = "cosmoshub-4";
     result['kava'] = "kava_2222-10";
     result['band'] = "laozi-mainnet";
     result['starname'] = "iov-mainnet-ibc";
     result['persistence'] = "core-1";
-    result['sentinel'] = "sentinelhub-2";
     result['osmosis'] = "osmosis-1";
     result['certik'] = "shentu-2.2";
     result['juno'] = "juno-1";
     result['comdex'] = "comdex-1";
-    result['lum'] = "lum-network-1";
     result['evmos'] = "evmos_9001-2";
     result['injective-mainnet'] = "injective-1";
     result['agoric'] = "agoric-3";
@@ -121,10 +120,10 @@ const actions = {
     result['terrav2'] = "phoenix-1";
     result['celer-v2'] = "sgn-3";
     result['gravity'] = "gravity-bridge-3";
-    result['sifchain'] = "sifchain-1";
     result['Tgrade'] = "tgrade-mainnet-1";
     result['stafi'] = "stafihub-1";
     result['passage'] = "passage-1";
+    result['quicksilver'] = "quicksilver-1";
     commit(mutationTypes.SET_LATEST_CHAIN_IDS, result);
   },
   async getNetworksInfo({ commit }) {
