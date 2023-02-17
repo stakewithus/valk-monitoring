@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  server:
+    image: "${VALK_SERVER_IMAGE}"
+    ports:
+      - "${VALK_SERVER_PORT_PUBLIC}:${VALK_SERVER_PORT_EXPOSE}"
+  client:
+    image: "${VALK_CLIENT_IMAGE}"
+    ports:
+      - "${VALK_CLIENT_PORT_PUBLIC}:${VALK_CLIENT_PORT_EXPOSE}"
+    depends_on:
+      - server
