@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  vault:
+    image: vault
+    env_file: app.env
+    # environment: 
+    #   VAULT_DEV_ROOT_TOKEN_ID: password
+    ports:
+      - "8200:8200"
+  server:
+    image: valk-server
+    env_file: app.env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # depends_on:
+    #   - vault
+    # environment:
+    #   # VAULT_ADDRESS: vault:8200
+    #   # VAULT_TOKEN: password
+    #   SERVER_PORT: 3001
+    ports:
+      - "3001:3001"
