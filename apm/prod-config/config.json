@@ -1,0 +1,48 @@
+{
+  "nodes": [
+    {
+      "id": "9b1f3eda-321d-4815-b4ed-c1859b895a10",
+      "address": "127.0.0.1",
+      "region": "ap-southeast-1a",
+      "projects": [
+        {
+          "name": "commit-hub",
+          "network": "unknown",
+          "ports": {
+            "http_p2p": 46658,
+            "http_rpc": 46657
+          }
+        }
+      ]
+    }
+  ],
+  "deRegisterServices": {
+    "commit-hub": ["us-east-2a", "eu-central-1b"]
+  },
+  "heathChecksThresholdLimits": {
+    "lastBlockTime": {
+      "warning": 30,
+      "critical": 60
+    },
+    "peerCounts": {
+      "warning": 10,
+      "critical": 5
+    },
+    "missedBlocks": {
+      "warning": 3,
+      "critical": 5
+    }
+  },
+  "customHealthCheckThresholdLimits": {
+    "kava": {
+      "peerCounts": {
+        "warning": 1,
+        "critical": 2
+      },
+      "missedBlocks": {
+        "warning": 5,
+        "critical": 8
+      }
+    }
+  }
+}

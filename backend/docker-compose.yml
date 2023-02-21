@@ -4,6 +4,10 @@ services:
   vault:
     image: vault
     env_file: app.env
+    volumes:
+        - ./vault/config:/vault/config
+        - ./vault/policies:/vault/policies
+        - ./vault/data:/vault/data
     # environment: 
     #   VAULT_DEV_ROOT_TOKEN_ID: password
     ports:
@@ -21,4 +25,4 @@ services:
     #   # VAULT_TOKEN: password
     #   SERVER_PORT: 3001
     ports:
-      - "3001:3001"
+      - "5001:3001"

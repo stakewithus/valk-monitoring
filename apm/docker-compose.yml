@@ -1,0 +1,69 @@
+version: '3.3'
+
+services:
+  influxdb:
+    image: influxdb:1.8.10
+    logging:
+      options:
+        max-size: "50m"
+        max-file: "5"
+    environment:
+      - INFLUXDB_HTTP_FLUX_ENABLED=false
+      - INFLUXDB_REPORTING_DISABLED=false
+      - INFLUXDB_MONITOR_STORE_ENABLED=false
+      - INFLUXDB_DATA_INDEX_VERSION=tsi1
+#      - INFLUXDB_CONTINUOUS_QUERIES_ENABLED=false
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influxdata:/var/lib/influxdb
+
+  sync:
+    image: "${APM_IMAGE}"
+    env_file: app.env
+    network_mode: "host"
+    command: ["sync", "--node", "${NODE_HOST}", "--production", "--prod-config-file", "/core/config.json"]
+    volumes:
+      - ${PROD_CONFIG_FILE}:/core/config.json
+
+  server:
+    image: "${APM_IMAGE}"
+    env_file: app.env
+    # ports:
+    #   - "3001:3001"
+    network_mode: "host"
+    command: ["server", "-p", "3111", "--node", "${NODE_HOST}", "--production", "--prod-config-file", "/core/config.json"]
+    depends_on:
+      - sync
+      - monit
+      - consul
+    logging:
+      options:
+        max-size: "50m"
+        max-file: "5"
+    volumes:
+      - ${PROD_CONFIG_FILE}:/core/config.json
+
+  monit:
+    image: "${APM_IMAGE}"
+    env_file: app.env
+    network_mode: "host"
+    command: ["monit", "--node", "${NODE_HOST}", "--production", "--prod-config-file", "/core/config.json"]
+    depends_on:
+      - influxdb
+      - sync
+      - consul
+    logging:
+      options:
+        max-size: "50m"
+        max-file: "5"
+    volumes:
+      - ${PROD_CONFIG_FILE}:/core/config.json
+
+  consul:
+    image: consul:latest
+    network_mode: "host"
+    command: consul agent -dev -config-dir=/consul/config
+    volumes:
+      - ./consul-config.json:/consul/config/config.json
+      # - ./consul/data:/consul/data

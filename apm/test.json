@@ -1,0 +1,4 @@
+{
+  "JobHCL": "job \"socat-server\" {\n  datacenters = [\"dc1\"]\n  group \"grp\" {\n    task \"socket\" {\n      meta {\n        some-key = \"my-value\" \n        region = \"ap-southeast-1\"\n      }\n      driver = \"docker\"\n      config = {\n        image = \"socat-app\"\n        entrypoint = [\"socat\"]\n        args = [\"-v tcp-l:8181,fork exec:\\\"/app/echo\\\"\"]\n        mounts = [\n          {\n            type = \"bind\"\n            target = \"/app\"\n            source = \"/opt/hashistack/app\"\n          }\n        ]\n        port_map = {\n          socat_sock = 8181\n        }\n      }\n      resources = {\n        cpu = 300\n        memory = 256\n        network {\n          port \"socat_sock\" { static = \"8181\" }\n        }\n      }\n    } \n  }\n}",
+  "Canonicalize": false
+}

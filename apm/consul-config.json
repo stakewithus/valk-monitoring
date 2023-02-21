@@ -1,0 +1,12 @@
+{
+    "watches": [{
+      "type": "keyprefix",
+      "prefix": "projects/global",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://127.0.0.1:3001/kv/watch",
+        "method": "POST",
+        "timeout": "10s"
+      }
+    }]
+  }

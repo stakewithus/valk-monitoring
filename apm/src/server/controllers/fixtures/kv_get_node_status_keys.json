@@ -1,0 +1,59 @@
+{
+  "Results": [
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "projects/nodes/bcl-commit-hub/unknown/ap-southeast-1a/status/block-height",
+        "Flags": 0,
+        "Value": "MTAwMA==",
+        "CreateIndex": 13,
+        "ModifyIndex": 13
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "projects/nodes/bcl-commit-hub/unknown/ap-southeast-1a/status/block-time",
+        "Flags": 0,
+        "Value": "MTUwMDAwMDAw",
+        "CreateIndex": 17,
+        "ModifyIndex": 17
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "projects/nodes/bcl-commit-hub/unknown/ap-southeast-1a/status/peers-inbound",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 20,
+        "ModifyIndex": 20
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "projects/nodes/bcl-commit-hub/unknown/ap-southeast-1a/status/peers-outbound",
+        "Flags": 0,
+        "Value": "NQ==",
+        "CreateIndex": 41,
+        "ModifyIndex": 41
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "projects/nodes/bcl-commit-hub/unknown/ap-southeast-1a/status/peers-total",
+        "Flags": 0,
+        "Value": "MTU=",
+        "CreateIndex": 43,
+        "ModifyIndex": 43
+      }
+    }
+  ],
+  "Errors": null,
+  "Index": 0,
+  "LastContact": 0,
+  "KnownLeader": true,
+  "ConsistencyLevel": ""
+}

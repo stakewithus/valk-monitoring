@@ -1,0 +1,183 @@
+{
+  "Affinities": null,
+  "AllAtOnce": false,
+  "Constraints": null,
+  "CreateIndex": 304,
+  "Datacenters": [
+    "dc1"
+  ],
+  "Dispatched": false,
+  "ID": "blockchain-client",
+  "JobModifyIndex": 304,
+  "Meta": {
+    "node-project": "blockchain-client"
+  },
+  "ModifyIndex": 306,
+  "Name": "blockchain-client",
+  "Namespace": "default",
+  "ParameterizedJob": null,
+  "ParentID": "",
+  "Payload": null,
+  "Periodic": null,
+  "Priority": 50,
+  "Region": "global",
+  "Spreads": null,
+  "Stable": false,
+  "Status": "running",
+  "StatusDescription": "",
+  "Stop": false,
+  "SubmitTime": 1566803266452012800,
+  "TaskGroups": [
+    {
+      "Affinities": [
+        {
+          "LTarget": "${meta.region}",
+          "Operand": "set_contains_any",
+          "RTarget": "ap-southeast-1a",
+          "Weight": 100
+        },
+        {
+          "LTarget": "${meta.region}",
+          "Operand": "set_contains_any",
+          "RTarget": "us-east-2a,eu-central-1b",
+          "Weight": -100
+        }
+      ],
+      "Constraints": [
+        {
+          "LTarget": "${meta.chain_role}",
+          "Operand": "=",
+          "RTarget": "sentry"
+        }
+      ],
+      "Count": 1,
+      "EphemeralDisk": {
+        "Migrate": false,
+        "SizeMB": 300,
+        "Sticky": false
+      },
+      "Meta": null,
+      "Migrate": {
+        "HealthCheck": "checks",
+        "HealthyDeadline": 300000000000,
+        "MaxParallel": 1,
+        "MinHealthyTime": 10000000000
+      },
+      "Name": "commit-hub",
+      "ReschedulePolicy": {
+        "Attempts": 0,
+        "Delay": 30000000000,
+        "DelayFunction": "exponential",
+        "Interval": 0,
+        "MaxDelay": 3600000000000,
+        "Unlimited": true
+      },
+      "RestartPolicy": {
+        "Attempts": 2,
+        "Delay": 15000000000,
+        "Interval": 1800000000000,
+        "Mode": "fail"
+      },
+      "Spreads": null,
+      "Tasks": [
+        {
+          "Affinities": null,
+          "Artifacts": null,
+          "Config": {
+            "image": "socat-app:develop",
+            "args": [
+              "-v",
+              "tcp-l:8181,fork",
+              "exec:\"/app/echo\""
+            ],
+            "mounts": [
+              {
+                "source": "/opt/hashistack/app",
+                "type": "bind",
+                "target": "/app"
+              }
+            ],
+            "port_map": [
+              {
+                "http_rpc": 46657,
+                "http_abci": 46658,
+                "socat_sock": 8181,
+                "http_p2p": 46656
+              }
+            ],
+            "network_mode": "host"
+          },
+          "Constraints": null,
+          "DispatchPayload": null,
+          "Driver": "docker",
+          "Env": null,
+          "KillSignal": "",
+          "KillTimeout": 5000000000,
+          "Leader": false,
+          "LogConfig": {
+            "MaxFileSizeMB": 10,
+            "MaxFiles": 10
+          },
+          "Meta": {
+            "node-project-name": "commit-hub",
+            "node-project-category": "tendermint"
+          },
+          "Name": "maind",
+          "Resources": {
+            "CPU": 300,
+            "Devices": null,
+            "DiskMB": 0,
+            "IOPS": 0,
+            "MemoryMB": 256,
+            "Networks": [
+              {
+                "CIDR": "",
+                "Device": "",
+                "DynamicPorts": null,
+                "IP": "",
+                "MBits": 10,
+                "ReservedPorts": [
+                  {
+                    "Label": "socat_sock",
+                    "Value": 8181
+                  },
+                  {
+                    "Label": "http_p2p",
+                    "Value": 46656
+                  },
+                  {
+                    "Label": "http_rpc",
+                    "Value": 46657
+                  },
+                  {
+                    "Label": "http_abci",
+                    "Value": 46658
+                  }
+                ]
+              }
+            ]
+          },
+          "Services": null,
+          "ShutdownDelay": 0,
+          "Templates": null,
+          "User": "",
+          "Vault": null
+        }
+      ],
+      "Update": null
+    }
+  ],
+  "Type": "service",
+  "Update": {
+    "AutoRevert": false,
+    "Canary": 0,
+    "HealthCheck": "",
+    "HealthyDeadline": 0,
+    "MaxParallel": 0,
+    "MinHealthyTime": 0,
+    "ProgressDeadline": 0,
+    "Stagger": 0
+  },
+  "VaultToken": "",
+  "Version": 0
+}

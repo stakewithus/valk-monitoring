@@ -1,0 +1,88 @@
+{
+  "_nomad-client-xoklcw46rh5znbj7mvx6zdyuin6rng2r": {
+    "ID": "_nomad-client-xoklcw46rh5znbj7mvx6zdyuin6rng2r",
+    "Service": "nomad-client",
+    "Tags": [
+      "http"
+    ],
+    "Meta": {
+      "external-source": "nomad"
+    },
+    "Port": 4646,
+    "Address": "127.0.0.1",
+    "Weights": {
+      "Passing": 1,
+      "Warning": 1
+    },
+    "EnableTagOverride": false
+  },
+  "_nomad-server-fpdiv5iaakbnqdqwijunr45p7outyjm5": {
+    "ID": "_nomad-server-fpdiv5iaakbnqdqwijunr45p7outyjm5",
+    "Service": "nomad",
+    "Tags": [
+      "http"
+    ],
+    "Meta": {
+      "external-source": "nomad"
+    },
+    "Port": 4646,
+    "Address": "127.0.0.1",
+    "Weights": {
+      "Passing": 1,
+      "Warning": 1
+    },
+    "EnableTagOverride": false
+  },
+  "_nomad-server-inrkigfb4lt3qodqiwddaz3pehqjg4jg": {
+    "ID": "_nomad-server-inrkigfb4lt3qodqiwddaz3pehqjg4jg",
+    "Service": "nomad",
+    "Tags": [
+      "serf"
+    ],
+    "Meta": {
+      "external-source": "nomad"
+    },
+    "Port": 4648,
+    "Address": "127.0.0.1",
+    "Weights": {
+      "Passing": 1,
+      "Warning": 1
+    },
+    "EnableTagOverride": false
+  },
+  "_nomad-server-ydbdq32whkuyclmxj4uxu5jgpasci2fv": {
+    "ID": "_nomad-server-ydbdq32whkuyclmxj4uxu5jgpasci2fv",
+    "Service": "nomad",
+    "Tags": [
+      "rpc"
+    ],
+    "Meta": {
+      "external-source": "nomad"
+    },
+    "Port": 4647,
+    "Address": "127.0.0.1",
+    "Weights": {
+      "Passing": 1,
+      "Warning": 1
+    },
+    "EnableTagOverride": false
+  },
+  "bcl-commit-hub": {
+    "ID": "bcl-commit-hub",
+    "Service": "bcl-commit-hub",
+    "Tags": [],
+    "Meta": {
+      "node-project": "blockchain-client",
+      "node-project-category": "tendermint",
+      "node-project-name": "commit-hub",
+      "node-project-network": "crust-2"
+    },
+    "Port": 46656,
+    "Address": "127.0.0.1",
+    "Weights": {
+      "Passing": 1,
+      "Warning": 1
+    },
+    "EnableTagOverride": false
+  }
+}

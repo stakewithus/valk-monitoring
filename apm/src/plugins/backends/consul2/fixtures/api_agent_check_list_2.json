@@ -1,0 +1,136 @@
+{
+  "2036ba515192f6484824c119974b2c3d80275f14": {
+    "Node": "lappy",
+    "CheckID": "2036ba515192f6484824c119974b2c3d80275f14",
+    "Name": "Nomad Server HTTP Check",
+    "Status": "passing",
+    "Notes": "",
+    "Output": "HTTP GET http://127.0.0.1:4646/v1/agent/health?type=server: 200 OK Output: {\"server\":{\"message\":\"ok\",\"ok\":true}}",
+    "ServiceID": "_nomad-server-fpdiv5iaakbnqdqwijunr45p7outyjm5",
+    "ServiceName": "nomad",
+    "ServiceTags": [
+      "http"
+    ],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "3c7e39cff043bcebd17a550685cb6a506976640e": {
+    "Node": "lappy",
+    "CheckID": "3c7e39cff043bcebd17a550685cb6a506976640e",
+    "Name": "Nomad Client HTTP Check",
+    "Status": "passing",
+    "Notes": "",
+    "Output": "HTTP GET http://127.0.0.1:4646/v1/agent/health?type=client: 200 OK Output: {\"client\":{\"message\":\"ok\",\"ok\":true}}",
+    "ServiceID": "_nomad-client-xoklcw46rh5znbj7mvx6zdyuin6rng2r",
+    "ServiceName": "nomad-client",
+    "ServiceTags": [
+      "http"
+    ],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "950edec71e7e5deb5304d956c0677a167d69b8b8": {
+    "Node": "lappy",
+    "CheckID": "950edec71e7e5deb5304d956c0677a167d69b8b8",
+    "Name": "Nomad Server Serf Check",
+    "Status": "passing",
+    "Notes": "",
+    "Output": "TCP connect 127.0.0.1:4648: Success",
+    "ServiceID": "_nomad-server-inrkigfb4lt3qodqiwddaz3pehqjg4jg",
+    "ServiceName": "nomad",
+    "ServiceTags": [
+      "serf"
+    ],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "e2315cc8e3e0dd80c14df44e5d3b4647f6e3ef4c": {
+    "Node": "lappy",
+    "CheckID": "e2315cc8e3e0dd80c14df44e5d3b4647f6e3ef4c",
+    "Name": "Nomad Server RPC Check",
+    "Status": "passing",
+    "Notes": "",
+    "Output": "TCP connect 127.0.0.1:4647: Success",
+    "ServiceID": "_nomad-server-ydbdq32whkuyclmxj4uxu5jgpasci2fv",
+    "ServiceName": "nomad",
+    "ServiceTags": [
+      "rpc"
+    ],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:1": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:1",
+    "Name": "http-rpc-alive",
+    "Status": "critical",
+    "Notes": "Checks that Tendermint RPC Server is running",
+    "Output": "Get http://127.0.0.1:46657/status: dial tcp 127.0.0.1:46657: connect: connection refused",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:2": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:2",
+    "Name": "tcp-p2p-alive",
+    "Status": "critical",
+    "Notes": "Checks that Tendermint P2P Server is running",
+    "Output": "dial tcp 127.0.0.1:46656: connect: connection refused",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:3": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:3",
+    "Name": "tm-missed-blocks-StakeWithUs",
+    "Status": "passing",
+    "Notes": "Tally for monitoring missed blocks threshold",
+    "Output": "1 missed blocks in last 100",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:4": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:4",
+    "Name": "tm-late-block-time",
+    "Status": "warning",
+    "Notes": "Tally for late block time threshold",
+    "Output": "Last block time is 40s behind current time",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:5": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:5",
+    "Name": "tm-peer-count",
+    "Status": "critical",
+    "Notes": "Tally for peer count threshold",
+    "Output": "Peer count has dropped below 5",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  }
+}
