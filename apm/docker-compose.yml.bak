@@ -12,6 +12,7 @@ services:
       - INFLUXDB_REPORTING_DISABLED=false
       - INFLUXDB_MONITOR_STORE_ENABLED=false
       - INFLUXDB_DATA_INDEX_VERSION=tsi1
+#      - INFLUXDB_CONTINUOUS_QUERIES_ENABLED=false
     ports:
       - "8086:8086"
     volumes:
@@ -28,6 +29,8 @@ services:
   server:
     image: "${APM_IMAGE}"
     env_file: app.env
+    # ports:
+    #   - "3001:3001"
     network_mode: "host"
     command: ["server", "-p", "3001", "--node", "${NODE_HOST}", "--production", "--prod-config-file", "/core/config.json"]
     depends_on:
@@ -60,6 +63,9 @@ services:
   consul:
     image: consul:1.6.2
     network_mode: "host"
+    # ports:
+    #   - 8500:8500
+    #   - 8600:8600
     command: consul agent -dev -config-dir=/consul/config -bind 0.0.0.0
     volumes:
       - ./consul-config.json:/consul/config/config.json

@@ -23,4 +23,17 @@ EOF
 - "user" as encoded username,"pw" as plaintext password `vault write auth/userpass/users/[user] password=[pw] policies=app-policy`
 
 ## Start frontend interface
+### Configuration to connect to backend api and apm api
+- Located in frontend/src/config
 - `cd frontend && docker-compose up -d`
+
+## Start APM API (tendermint monitoring)
+
+### Configuration
+- Add in the projects that you would want to monitor under, include in project name and validator address: `apm/build/config/prod.js`
+- Add in nodes(sentries) to be monitored under: `apm/config.json`
+
+### Prebuild the apm docker image
+- Ensure node is install
+- `npm install &*& npm run build`
+- `docker-compose up -d --build`
