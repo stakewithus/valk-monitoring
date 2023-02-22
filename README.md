@@ -43,4 +43,4 @@ EOF
 
 
 ## Login in
-- Navigate to <ip address>:8080 and login using the details created in the backend
+- Navigate to `<ip address>:8080`and login using the details created in the backend
