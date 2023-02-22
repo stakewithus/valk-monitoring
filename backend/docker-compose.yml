@@ -8,8 +8,6 @@ services:
         - ./vault/config:/vault/config
         - ./vault/policies:/vault/policies
         - ./vault/data:/vault/data
-    # environment: 
-    #   VAULT_DEV_ROOT_TOKEN_ID: password
     ports:
       - "8200:8200"
   server:
@@ -18,11 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # depends_on:
-    #   - vault
-    # environment:
-    #   # VAULT_ADDRESS: vault:8200
-    #   # VAULT_TOKEN: password
-    #   SERVER_PORT: 3001
+    depends_on:
+      - vault
     ports:
       - "5001:3001"
