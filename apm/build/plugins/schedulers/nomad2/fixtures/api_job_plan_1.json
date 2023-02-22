@@ -1,0 +1,642 @@
+{
+  "Annotations": {
+    "DesiredTGUpdates": {
+      "commit-hub": {
+        "Canary": 0,
+        "DestructiveUpdate": 0,
+        "Ignore": 0,
+        "InPlaceUpdate": 0,
+        "Migrate": 0,
+        "Place": 1,
+        "Preemptions": 0,
+        "Stop": 0
+      }
+    },
+    "PreemptedAllocs": null
+  },
+  "CreatedEvals": null,
+  "Diff": {
+    "Type": "Added",
+    "ID": "blockchain-client",
+    "Fields": [
+      {
+        "Type": "Added",
+        "Name": "AllAtOnce",
+        "Old": "",
+        "New": "false",
+        "Annotations": null
+      },
+      {
+        "Type": "Added",
+        "Name": "Dispatched",
+        "Old": "",
+        "New": "false",
+        "Annotations": null
+      },
+      {
+        "Type": "Added",
+        "Name": "Meta[node-project]",
+        "Old": "",
+        "New": "blockchain-client",
+        "Annotations": null
+      },
+      {
+        "Type": "Added",
+        "Name": "Name",
+        "Old": "",
+        "New": "blockchain-client",
+        "Annotations": null
+      },
+      {
+        "Type": "Added",
+        "Name": "Namespace",
+        "Old": "",
+        "New": "default",
+        "Annotations": null
+      },
+      {
+        "Type": "Added",
+        "Name": "Priority",
+        "Old": "",
+        "New": "50",
+        "Annotations": null
+      },
+      {
+        "Type": "Added",
+        "Name": "Region",
+        "Old": "",
+        "New": "global",
+        "Annotations": null
+      },
+      {
+        "Type": "Added",
+        "Name": "Stop",
+        "Old": "",
+        "New": "false",
+        "Annotations": null
+      },
+      {
+        "Type": "Added",
+        "Name": "Type",
+        "Old": "",
+        "New": "service",
+        "Annotations": null
+      }
+    ],
+    "Objects": [
+      {
+        "Type": "Added",
+        "Name": "Datacenters",
+        "Fields": [
+          {
+            "Type": "Added",
+            "Name": "Datacenters",
+            "Old": "",
+            "New": "dc1",
+            "Annotations": null
+          }
+        ],
+        "Objects": null
+      }
+    ],
+    "TaskGroups": [
+      {
+        "Type": "Added",
+        "Name": "commit-hub",
+        "Fields": [
+          {
+            "Type": "Added",
+            "Name": "Count",
+            "Old": "",
+            "New": "1",
+            "Annotations": [
+              "forces create"
+            ]
+          }
+        ],
+        "Objects": [
+          {
+            "Type": "Added",
+            "Name": "Constraint",
+            "Fields": [
+              {
+                "Type": "Added",
+                "Name": "LTarget",
+                "Old": "",
+                "New": "${meta.chain_role}",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Operand",
+                "Old": "",
+                "New": "=",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "RTarget",
+                "Old": "",
+                "New": "sentry",
+                "Annotations": null
+              }
+            ],
+            "Objects": null
+          },
+          {
+            "Type": "Added",
+            "Name": "Affinity",
+            "Fields": [
+              {
+                "Type": "Added",
+                "Name": "LTarget",
+                "Old": "",
+                "New": "${meta.region}",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Operand",
+                "Old": "",
+                "New": "set_contains_any",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "RTarget",
+                "Old": "",
+                "New": "us-east-2a,eu-central-1b",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Weight",
+                "Old": "",
+                "New": "-100",
+                "Annotations": null
+              }
+            ],
+            "Objects": null
+          },
+          {
+            "Type": "Added",
+            "Name": "Affinity",
+            "Fields": [
+              {
+                "Type": "Added",
+                "Name": "LTarget",
+                "Old": "",
+                "New": "${meta.region}",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Operand",
+                "Old": "",
+                "New": "set_contains_any",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "RTarget",
+                "Old": "",
+                "New": "ap-southeast-1a",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Weight",
+                "Old": "",
+                "New": "100",
+                "Annotations": null
+              }
+            ],
+            "Objects": null
+          },
+          {
+            "Type": "Added",
+            "Name": "RestartPolicy",
+            "Fields": [
+              {
+                "Type": "Added",
+                "Name": "Attempts",
+                "Old": "",
+                "New": "2",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Delay",
+                "Old": "",
+                "New": "15000000000",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Interval",
+                "Old": "",
+                "New": "1800000000000",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Mode",
+                "Old": "",
+                "New": "fail",
+                "Annotations": null
+              }
+            ],
+            "Objects": null
+          },
+          {
+            "Type": "Added",
+            "Name": "ReschedulePolicy",
+            "Fields": [
+              {
+                "Type": "Added",
+                "Name": "Attempts",
+                "Old": "",
+                "New": "0",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Delay",
+                "Old": "",
+                "New": "30000000000",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "DelayFunction",
+                "Old": "",
+                "New": "exponential",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Interval",
+                "Old": "",
+                "New": "0",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "MaxDelay",
+                "Old": "",
+                "New": "3600000000000",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Unlimited",
+                "Old": "",
+                "New": "true",
+                "Annotations": null
+              }
+            ],
+            "Objects": null
+          },
+          {
+            "Type": "Added",
+            "Name": "EphemeralDisk",
+            "Fields": [
+              {
+                "Type": "Added",
+                "Name": "Migrate",
+                "Old": "",
+                "New": "false",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "SizeMB",
+                "Old": "",
+                "New": "300",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Sticky",
+                "Old": "",
+                "New": "false",
+                "Annotations": null
+              }
+            ],
+            "Objects": null
+          }
+        ],
+        "Tasks": [
+          {
+            "Type": "Added",
+            "Name": "maind",
+            "Fields": [
+              {
+                "Type": "Added",
+                "Name": "Driver",
+                "Old": "",
+                "New": "docker",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "KillTimeout",
+                "Old": "",
+                "New": "5000000000",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Leader",
+                "Old": "",
+                "New": "false",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Meta[node-project-category]",
+                "Old": "",
+                "New": "tendermint",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Meta[node-project-name]",
+                "Old": "",
+                "New": "commit-hub",
+                "Annotations": null
+              },
+              {
+                "Type": "Added",
+                "Name": "ShutdownDelay",
+                "Old": "",
+                "New": "0",
+                "Annotations": null
+              }
+            ],
+            "Objects": [
+              {
+                "Type": "Added",
+                "Name": "Config",
+                "Fields": [
+                  {
+                    "Type": "Added",
+                    "Name": "args[0]",
+                    "Old": "",
+                    "New": "-v",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "args[1]",
+                    "Old": "",
+                    "New": "tcp-l:8181,fork",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "args[2]",
+                    "Old": "",
+                    "New": "exec:\"/app/echo\"",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "image",
+                    "Old": "",
+                    "New": "socat-app:develop",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "mounts[0][source]",
+                    "Old": "",
+                    "New": "/opt/hashistack/app",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "mounts[0][target]",
+                    "Old": "",
+                    "New": "/app",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "mounts[0][type]",
+                    "Old": "",
+                    "New": "bind",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "network_mode",
+                    "Old": "",
+                    "New": "host",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "port_map[0][http_abci]",
+                    "Old": "",
+                    "New": "46658",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "port_map[0][http_p2p]",
+                    "Old": "",
+                    "New": "46656",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "port_map[0][http_rpc]",
+                    "Old": "",
+                    "New": "46657",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "port_map[0][socat_sock]",
+                    "Old": "",
+                    "New": "8181",
+                    "Annotations": null
+                  }
+                ],
+                "Objects": null
+              },
+              {
+                "Type": "Added",
+                "Name": "Resources",
+                "Fields": [
+                  {
+                    "Type": "Added",
+                    "Name": "CPU",
+                    "Old": "",
+                    "New": "300",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "DiskMB",
+                    "Old": "",
+                    "New": "0",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "IOPS",
+                    "Old": "",
+                    "New": "0",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "MemoryMB",
+                    "Old": "",
+                    "New": "256",
+                    "Annotations": null
+                  }
+                ],
+                "Objects": [
+                  {
+                    "Type": "Added",
+                    "Name": "Network",
+                    "Fields": [
+                      {
+                        "Type": "Added",
+                        "Name": "MBits",
+                        "Old": "",
+                        "New": "10",
+                        "Annotations": null
+                      }
+                    ],
+                    "Objects": [
+                      {
+                        "Type": "Added",
+                        "Name": "Static Port",
+                        "Fields": [
+                          {
+                            "Type": "Added",
+                            "Name": "Label",
+                            "Old": "",
+                            "New": "http_abci",
+                            "Annotations": null
+                          },
+                          {
+                            "Type": "Added",
+                            "Name": "Value",
+                            "Old": "",
+                            "New": "46658",
+                            "Annotations": null
+                          }
+                        ],
+                        "Objects": null
+                      },
+                      {
+                        "Type": "Added",
+                        "Name": "Static Port",
+                        "Fields": [
+                          {
+                            "Type": "Added",
+                            "Name": "Label",
+                            "Old": "",
+                            "New": "http_p2p",
+                            "Annotations": null
+                          },
+                          {
+                            "Type": "Added",
+                            "Name": "Value",
+                            "Old": "",
+                            "New": "46656",
+                            "Annotations": null
+                          }
+                        ],
+                        "Objects": null
+                      },
+                      {
+                        "Type": "Added",
+                        "Name": "Static Port",
+                        "Fields": [
+                          {
+                            "Type": "Added",
+                            "Name": "Label",
+                            "Old": "",
+                            "New": "http_rpc",
+                            "Annotations": null
+                          },
+                          {
+                            "Type": "Added",
+                            "Name": "Value",
+                            "Old": "",
+                            "New": "46657",
+                            "Annotations": null
+                          }
+                        ],
+                        "Objects": null
+                      },
+                      {
+                        "Type": "Added",
+                        "Name": "Static Port",
+                        "Fields": [
+                          {
+                            "Type": "Added",
+                            "Name": "Label",
+                            "Old": "",
+                            "New": "socat_sock",
+                            "Annotations": null
+                          },
+                          {
+                            "Type": "Added",
+                            "Name": "Value",
+                            "Old": "",
+                            "New": "8181",
+                            "Annotations": null
+                          }
+                        ],
+                        "Objects": null
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Type": "Added",
+                "Name": "LogConfig",
+                "Fields": [
+                  {
+                    "Type": "Added",
+                    "Name": "MaxFileSizeMB",
+                    "Old": "",
+                    "New": "10",
+                    "Annotations": null
+                  },
+                  {
+                    "Type": "Added",
+                    "Name": "MaxFiles",
+                    "Old": "",
+                    "New": "10",
+                    "Annotations": null
+                  }
+                ],
+                "Objects": null
+              }
+            ],
+            "Annotations": [
+              "forces create"
+            ]
+          }
+        ],
+        "Updates": {
+          "create": 1
+        }
+      }
+    ]
+  },
+  "FailedTGAllocs": null,
+  "Index": 0,
+  "JobModifyIndex": 0,
+  "NextPeriodicLaunch": "0001-01-01T00:00:00Z",
+  "Warnings": ""
+}

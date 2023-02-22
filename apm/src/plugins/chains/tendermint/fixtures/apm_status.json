@@ -1,0 +1,38 @@
+{
+  "jsonrpc": "2.0",
+  "id": "",
+  "result": {
+    "node_info": {
+      "protocol_version": {
+        "p2p": "7",
+        "block": "10",
+        "app": "0"
+      },
+      "id": "168d2769c783c314ccd909a80b3610653202135f",
+      "listen_addr": "tcp://0.0.0.0:26656",
+      "network": "columbus-2",
+      "version": "0.31.5",
+      "channels": "40202122233038",
+      "moniker": "Charlie V",
+      "other": {
+        "tx_index": "on",
+        "rpc_address": "tcp://0.0.0.0:26657"
+      }
+    },
+    "sync_info": {
+      "latest_block_hash": "18FF0A3394B733449418E878E06562FC2E9DAD4C7EDEEAEB3967D92FA654672F",
+      "latest_app_hash": "3D17496DD681B2F6BEC03AE4FB51AEB5F7E040000F1C7BE700D9FCDE2584AAF8",
+      "latest_block_height": "958446",
+      "latest_block_time": "2019-08-16T04:06:16.468759045Z",
+      "catching_up": false
+    },
+    "validator_info": {
+      "address": "62662F3CBB4CF54EBF7568E5B460938663827B6D",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "ckATb/DfGIWJmawVUCMbH4qVeLjNDfY8vKZ7MfBd6m8="
+      },
+      "voting_power": "2500008"
+    }
+  }
+}

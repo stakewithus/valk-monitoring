@@ -1,0 +1,68 @@
+{
+  "nodes": [
+     {
+      "id": "7f1714b5-8d15-4679-9c47-d154d7b70da9",
+      "address": "65.108.71.202",
+      "region": "swu-hetzner-test-03",
+      "projects": [
+        {
+          "name": "bandchain-testnet6",
+          "network": "laozi-testnet6",
+            "ports": {
+              "http_p2p": 41156,
+              "http_rpc": 41157
+             }
+          },
+        {
+          "name": "quicksilver-testnet",
+          "network": "quicksilver-testnet",
+            "ports": {
+              "http_p2p": 22856,
+              "http_rpc": 22857
+             }
+          },
+         {
+          "name": "cosmos-testnet",
+          "network": "cosmos-testnet",
+            "ports": {
+              "http_p2p": 47756,
+              "http_rpc": 47757
+             }
+          },
+          {
+          "name": "archway-testnet",
+          "network": "archway-testnet",
+            "ports": {
+              "http_p2p": 40056,
+              "http_rpc": 40057
+             }
+          }
+      ]
+    }
+  ],
+  "deRegisterServices": {
+    "cosmos": [],
+    "iov": [],
+    "kava": [],
+    "commit": [],
+    "certik": [],
+    "band": [],
+    "sentinel": []
+  },
+  "heathChecksThresholdLimits": {
+    "lastBlockTime": {
+      "warning": 30,
+      "critical": 90
+    },
+    "peerCounts": {
+      "warning": 2,
+      "critical": 1
+    },
+    "missedBlocks": {
+      "warning": 95,
+      "critical": 90
+    }
+  },
+  "customHealthCheckThresholdLimits": {
+  }
+}

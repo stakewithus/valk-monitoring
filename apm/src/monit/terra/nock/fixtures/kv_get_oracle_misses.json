@@ -1,0 +1,129 @@
+{
+  "Results": [
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/100",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 88,
+        "ModifyIndex": 88
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/101",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 89,
+        "ModifyIndex": 89
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/102",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/103",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/104",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/105",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/106",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/107",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/108",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/109",
+        "Flags": 0,
+        "Value": "MTA=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/110",
+        "Flags": 0,
+        "Value": "MTI=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    },
+    {
+      "KV": {
+        "LockIndex": 0,
+        "Key": "backend/terra/oracle/terravaloper1emscfpz9jjtj8tj2nh70y25uywcakldsj76luz/miss/111",
+        "Flags": 0,
+        "Value": "MTI=",
+        "CreateIndex": 91,
+        "ModifyIndex": 91
+      }
+    }
+  ],
+  "Errors": null,
+  "Index": 0,
+  "LastContact": 0,
+  "KnownLeader": true,
+  "ConsistencyLevel": ""
+}

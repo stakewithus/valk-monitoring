@@ -1,0 +1,69 @@
+{
+  "Annotations": {
+    "DesiredTGUpdates": {
+      "commit-hub": {
+        "Canary": 0,
+        "DestructiveUpdate": 1,
+        "Ignore": 0,
+        "InPlaceUpdate": 0,
+        "Migrate": 0,
+        "Place": 0,
+        "Preemptions": 0,
+        "Stop": 0
+      },
+      "kava": {
+        "Canary": 0,
+        "DestructiveUpdate": 0,
+        "Ignore": 0,
+        "InPlaceUpdate": 0,
+        "Migrate": 0,
+        "Place": 0,
+        "Preemptions": 0,
+        "Stop": 5
+      }
+    },
+    "PreemptedAllocs": null
+  },
+  "CreatedEvals": null,
+  "Diff": {
+    "Type": "Edited",
+    "ID": "blockchain-client",
+    "Fields": null,
+    "Objects": null,
+    "TaskGroups": [
+      {
+        "Type": "Edited",
+        "Name": "commit-hub",
+        "Fields": null,
+        "Objects": null,
+        "Tasks": [
+          {
+            "Type": "Edited",
+            "Name": "maind",
+            "Fields": [
+              {
+                "Type": "Edited",
+                "Name": "Meta[node-project-name]",
+                "Old": "commit-hub",
+                "New": "commit-hub-prod",
+                "Annotations": null
+              }
+            ],
+            "Objects": null,
+            "Annotations": [
+              "forces create\/destroy update"
+            ]
+          }
+        ],
+        "Updates": {
+          "create\/destroy update": 1
+        }
+      }
+    ]
+  },
+  "FailedTGAllocs": null,
+  "Index": 365,
+  "JobModifyIndex": 365,
+  "NextPeriodicLaunch": "0001-01-01T00:00:00Z",
+  "Warnings": ""
+}

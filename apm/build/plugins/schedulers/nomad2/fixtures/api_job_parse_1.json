@@ -1,0 +1,152 @@
+{
+  "Affinities": null,
+  "AllAtOnce": null,
+  "Constraints": null,
+  "CreateIndex": null,
+  "Datacenters": [
+    "dc1"
+  ],
+  "Dispatched": false,
+  "ID": "blockchain-client",
+  "JobModifyIndex": null,
+  "Meta": {
+    "node-project": "blockchain-client"
+  },
+  "Migrate": null,
+  "ModifyIndex": null,
+  "Name": "blockchain-client",
+  "Namespace": null,
+  "ParameterizedJob": null,
+  "ParentID": null,
+  "Payload": null,
+  "Periodic": null,
+  "Priority": null,
+  "Region": null,
+  "Reschedule": null,
+  "Spreads": null,
+  "Stable": null,
+  "Status": null,
+  "StatusDescription": null,
+  "Stop": null,
+  "SubmitTime": null,
+  "TaskGroups": [
+    {
+      "Affinities": [
+        {
+          "LTarget": "${meta.region}",
+          "Operand": "set_contains_any",
+          "RTarget": "ap-southeast-1a",
+          "Weight": 100
+        },
+        {
+          "LTarget": "${meta.region}",
+          "Operand": "set_contains_any",
+          "RTarget": "us-east-2a,eu-central-1b",
+          "Weight": -100
+        }
+      ],
+      "Constraints": [
+        {
+          "LTarget": "${meta.chain_role}",
+          "Operand": "=",
+          "RTarget": "sentry"
+        }
+      ],
+      "Count": 1,
+      "EphemeralDisk": null,
+      "Meta": null,
+      "Migrate": null,
+      "Name": "commit-hub",
+      "ReschedulePolicy": null,
+      "RestartPolicy": null,
+      "Spreads": null,
+      "Tasks": [
+        {
+          "Affinities": null,
+          "Artifacts": null,
+          "Config": {
+            "port_map": [
+              {
+                "http_p2p": 46656,
+                "http_rpc": 46657,
+                "http_abci": 46658,
+                "socat_sock": 8181
+              }
+            ],
+            "network_mode": "host",
+            "image": "socat-app:develop",
+            "args": [
+              "-v",
+              "tcp-l:8181,fork",
+              "exec:\"\/app\/echo\""
+            ],
+            "mounts": [
+              {
+                "type": "bind",
+                "target": "\/app",
+                "source": "\/opt\/hashistack\/app"
+              }
+            ]
+          },
+          "Constraints": null,
+          "DispatchPayload": null,
+          "Driver": "docker",
+          "Env": null,
+          "KillSignal": "",
+          "KillTimeout": null,
+          "Leader": false,
+          "LogConfig": null,
+          "Meta": {
+            "node-project-name": "commit-hub",
+            "node-project-category": "tendermint"
+          },
+          "Name": "maind",
+          "Resources": {
+            "CPU": 300,
+            "Devices": null,
+            "DiskMB": null,
+            "IOPS": null,
+            "MemoryMB": 256,
+            "Networks": [
+              {
+                "CIDR": "",
+                "Device": "",
+                "DynamicPorts": null,
+                "IP": "",
+                "MBits": null,
+                "ReservedPorts": [
+                  {
+                    "Label": "socat_sock",
+                    "Value": 8181
+                  },
+                  {
+                    "Label": "http_p2p",
+                    "Value": 46656
+                  },
+                  {
+                    "Label": "http_rpc",
+                    "Value": 46657
+                  },
+                  {
+                    "Label": "http_abci",
+                    "Value": 46658
+                  }
+                ]
+              }
+            ]
+          },
+          "Services": null,
+          "ShutdownDelay": 0,
+          "Templates": null,
+          "User": "",
+          "Vault": null
+        }
+      ],
+      "Update": null
+    }
+  ],
+  "Type": null,
+  "Update": null,
+  "VaultToken": null,
+  "Version": null
+}

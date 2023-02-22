@@ -1,0 +1,72 @@
+{
+  "service:bcl-commit-hub:1": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:1",
+    "Name": "http-rpc-alive",
+    "Status": "critical",
+    "Notes": "Checks that Tendermint RPC Server is running",
+    "Output": "Get http://127.0.0.1:46657/status: dial tcp 127.0.0.1:46657: connect: connection refused",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:2": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:2",
+    "Name": "tcp-p2p-alive",
+    "Status": "critical",
+    "Notes": "Checks that Tendermint P2P Server is running",
+    "Output": "dial tcp 127.0.0.1:46656: connect: connection refused",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:3": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:3",
+    "Name": "tm-missed-blocks",
+    "Status": "passing",
+    "Notes": "Tally for monitoring missed blocks threshold",
+    "Output": "1 missed blocks in last 100",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:4": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:4",
+    "Name": "tm-late-block-time",
+    "Status": "warning",
+    "Notes": "Tally for late block time threshold",
+    "Output": "Last block time is 40s behind current time",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  },
+  "service:bcl-commit-hub:5": {
+    "Node": "lappy",
+    "CheckID": "service:bcl-commit-hub:5",
+    "Name": "tm-peer-count",
+    "Status": "critical",
+    "Notes": "Tally for peer count threshold",
+    "Output": "Peer count has dropped below 5",
+    "ServiceID": "bcl-commit-hub",
+    "ServiceName": "bcl-commit-hub",
+    "ServiceTags": [],
+    "Definition": {},
+    "CreateIndex": 0,
+    "ModifyIndex": 0
+  }
+}

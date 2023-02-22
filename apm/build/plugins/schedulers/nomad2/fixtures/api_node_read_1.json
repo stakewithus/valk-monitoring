@@ -1,0 +1,204 @@
+{
+  "Attributes": {
+    "driver.docker.version": "18.09.7",
+    "cpu.frequency": "4000",
+    "driver.docker.volumes.enabled": "true",
+    "unique.hostname": "lappy",
+    "driver.docker.os_type": "linux",
+    "unique.storage.volume": "tmpfs",
+    "os.signals": "SIGBUS,SIGSYS,SIGTERM,SIGTTIN,SIGXCPU,SIGKILL,SIGSTOP,SIGTRAP,SIGABRT,SIGCHLD,SIGFPE,SIGINT,SIGTSTP,SIGALRM,SIGIO,SIGIOT,SIGURG,SIGCONT,SIGQUIT,SIGSEGV,SIGTTOU,SIGUSR1,SIGWINCH,SIGXFSZ,SIGHUP,SIGILL,SIGPIPE,SIGPROF,SIGUSR2",
+    "unique.storage.bytesfree": "4122427392",
+    "unique.consul.name": "lappy",
+    "driver.raw_exec": "1",
+    "driver.qemu.version": "3.0.1",
+    "driver.docker": "1",
+    "cpu.arch": "amd64",
+    "nomad.revision": "18dd59056ee1d7b2df51256fe900a98460d3d6b9",
+    "os.version": "29",
+    "os.name": "fedora",
+    "nomad.version": "0.9.0",
+    "unique.storage.bytestotal": "4126060544",
+    "cpu.modelname": "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz",
+    "unique.cgroup.mountpoint": "\/sys\/fs\/cgroup",
+    "driver.docker.runtimes": "runc",
+    "cpu.numcores": "8",
+    "memory.totalbytes": "8252125184",
+    "driver.docker.bridge_ip": "172.17.0.1",
+    "consul.version": "1.5.1",
+    "consul.server": "true",
+    "kernel.version": "5.1.16-200.fc29.x86_64",
+    "cpu.totalcompute": "32000",
+    "nomad.advertise.address": "127.0.0.1:4646",
+    "kernel.name": "linux",
+    "driver.qemu": "1",
+    "consul.datacenter": "dc1",
+    "unique.network.ip-address": "127.0.0.1",
+    "consul.revision": "40cec9846"
+  },
+  "ComputedClass": "v1:18406725189371120676",
+  "CreateIndex": 7,
+  "Datacenter": "dc1",
+  "Drain": false,
+  "DrainStrategy": null,
+  "Drivers": {
+    "exec": {
+      "Attributes": null,
+      "Detected": false,
+      "HealthDescription": "Driver must run as root",
+      "Healthy": false,
+      "UpdateTime": "2019-08-26T03:35:56.724762175+01:00"
+    },
+    "docker": {
+      "Attributes": {
+        "driver.docker.bridge_ip": "172.17.0.1",
+        "driver.docker.runtimes": "runc",
+        "driver.docker.os_type": "linux",
+        "driver.docker": "true",
+        "driver.docker.version": "18.09.7",
+        "driver.docker.volumes.enabled": "true"
+      },
+      "Detected": true,
+      "HealthDescription": "Healthy",
+      "Healthy": true,
+      "UpdateTime": "2019-08-26T03:35:56.757078872+01:00"
+    },
+    "qemu": {
+      "Attributes": {
+        "driver.qemu": "true",
+        "driver.qemu.version": "3.0.1"
+      },
+      "Detected": true,
+      "HealthDescription": "Healthy",
+      "Healthy": true,
+      "UpdateTime": "2019-08-26T03:35:56.786681751+01:00"
+    },
+    "rkt": {
+      "Attributes": null,
+      "Detected": false,
+      "HealthDescription": "Driver must run as root",
+      "Healthy": false,
+      "UpdateTime": "2019-08-26T03:35:56.718898749+01:00"
+    },
+    "raw_exec": {
+      "Attributes": {
+        "driver.raw_exec": "true"
+      },
+      "Detected": true,
+      "HealthDescription": "Healthy",
+      "Healthy": true,
+      "UpdateTime": "2019-08-26T03:35:56.72019364+01:00"
+    },
+    "java": {
+      "Attributes": null,
+      "Detected": false,
+      "HealthDescription": "Driver must run as root",
+      "Healthy": false,
+      "UpdateTime": "2019-08-26T03:35:56.724536643+01:00"
+    }
+  },
+  "Events": [
+    {
+      "CreateIndex": 0,
+      "Details": null,
+      "Message": "Node registered",
+      "Subsystem": "Cluster",
+      "Timestamp": "2019-08-26T03:35:56+01:00"
+    }
+  ],
+  "HTTPAddr": "127.0.0.1:4646",
+  "ID": "7314889b-0aeb-00e1-8b67-98de3ef8e4db",
+  "Links": {
+    "consul": "dc1.lappy"
+  },
+  "Meta": {
+    "machine": "i3.xlarge",
+    "chain_role": "sentry",
+    "region": "ap-southeast-1a"
+  },
+  "ModifyIndex": 9,
+  "Name": "lappy",
+  "NodeClass": "",
+  "NodeResources": {
+    "Cpu": {
+      "CpuShares": 32000
+    },
+    "Devices": null,
+    "Disk": {
+      "DiskMB": 3931
+    },
+    "Memory": {
+      "MemoryMB": 7869
+    },
+    "Networks": [
+      {
+        "CIDR": "127.0.0.1\/32",
+        "Device": "lo",
+        "DynamicPorts": null,
+        "IP": "127.0.0.1",
+        "MBits": 1000,
+        "ReservedPorts": null
+      },
+      {
+        "CIDR": "::1\/128",
+        "Device": "lo",
+        "DynamicPorts": null,
+        "IP": "::1",
+        "MBits": 1000,
+        "ReservedPorts": null
+      }
+    ]
+  },
+  "Reserved": {
+    "CPU": 0,
+    "Devices": null,
+    "DiskMB": 0,
+    "IOPS": 0,
+    "MemoryMB": 0,
+    "Networks": null
+  },
+  "ReservedResources": {
+    "Cpu": {
+      "CpuShares": 0
+    },
+    "Disk": {
+      "DiskMB": 0
+    },
+    "Memory": {
+      "MemoryMB": 0
+    },
+    "Networks": {
+      "ReservedHostPorts": ""
+    }
+  },
+  "Resources": {
+    "CPU": 32000,
+    "Devices": null,
+    "DiskMB": 3931,
+    "IOPS": 0,
+    "MemoryMB": 7869,
+    "Networks": [
+      {
+        "CIDR": "127.0.0.1\/32",
+        "Device": "lo",
+        "DynamicPorts": null,
+        "IP": "127.0.0.1",
+        "MBits": 1000,
+        "ReservedPorts": null
+      },
+      {
+        "CIDR": "::1\/128",
+        "Device": "lo",
+        "DynamicPorts": null,
+        "IP": "::1",
+        "MBits": 1000,
+        "ReservedPorts": null
+      }
+    ]
+  },
+  "SchedulingEligibility": "eligible",
+  "SecretID": "",
+  "Status": "ready",
+  "StatusDescription": "",
+  "StatusUpdatedAt": 1566798311,
+  "TLSEnabled": false
+}

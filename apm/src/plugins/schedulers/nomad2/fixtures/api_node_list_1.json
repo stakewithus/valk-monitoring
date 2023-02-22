@@ -1,0 +1,72 @@
+[
+  {
+    "Address": "127.0.0.1",
+    "CreateIndex": 7,
+    "Datacenter": "dc1",
+    "Drain": false,
+    "Drivers": {
+      "rkt": {
+        "Attributes": null,
+        "Detected": false,
+        "HealthDescription": "Driver must run as root",
+        "Healthy": false,
+        "UpdateTime": "2019-08-26T03:35:56.718898749+01:00"
+      },
+      "raw_exec": {
+        "Attributes": {
+          "driver.raw_exec": "true"
+        },
+        "Detected": true,
+        "HealthDescription": "Healthy",
+        "Healthy": true,
+        "UpdateTime": "2019-08-26T03:35:56.72019364+01:00"
+      },
+      "java": {
+        "Attributes": null,
+        "Detected": false,
+        "HealthDescription": "Driver must run as root",
+        "Healthy": false,
+        "UpdateTime": "2019-08-26T03:35:56.724536643+01:00"
+      },
+      "exec": {
+        "Attributes": null,
+        "Detected": false,
+        "HealthDescription": "Driver must run as root",
+        "Healthy": false,
+        "UpdateTime": "2019-08-26T03:35:56.724762175+01:00"
+      },
+      "docker": {
+        "Attributes": {
+          "driver.docker.os_type": "linux",
+          "driver.docker": "true",
+          "driver.docker.version": "18.09.7",
+          "driver.docker.volumes.enabled": "true",
+          "driver.docker.bridge_ip": "172.17.0.1",
+          "driver.docker.runtimes": "runc"
+        },
+        "Detected": true,
+        "HealthDescription": "Healthy",
+        "Healthy": true,
+        "UpdateTime": "2019-08-26T03:35:56.757078872+01:00"
+      },
+      "qemu": {
+        "Attributes": {
+          "driver.qemu.version": "3.0.1",
+          "driver.qemu": "true"
+        },
+        "Detected": true,
+        "HealthDescription": "Healthy",
+        "Healthy": true,
+        "UpdateTime": "2019-08-26T03:35:56.786681751+01:00"
+      }
+    },
+    "ID": "7314889b-0aeb-00e1-8b67-98de3ef8e4db",
+    "ModifyIndex": 9,
+    "Name": "lappy",
+    "NodeClass": "",
+    "SchedulingEligibility": "eligible",
+    "Status": "ready",
+    "StatusDescription": "",
+    "Version": "0.9.0"
+  }
+]

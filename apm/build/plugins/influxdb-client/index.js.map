@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/plugins/influxdb-client/index.js"],"names":["Writer","Query"],"mappings":";;;;;;;AAAA;;;;AACA;;;;;;QAGEA,M,GAAAA,gB;QACAC,K,GAAAA,e","file":"index.js","sourcesContent":["import Writer from './writer';\nimport Query from './query';\n\nexport {\n  Writer,\n  Query,\n};\n"]}

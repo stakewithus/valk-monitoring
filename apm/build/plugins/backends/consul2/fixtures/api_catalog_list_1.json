@@ -1,0 +1,17 @@
+[
+  {
+    "ID": "7314889b-0aeb-00e1-8b67-98de3ef8e4db",
+    "Node": "lappy",
+    "Address": "127.0.0.1",
+    "Datacenter": "dc1",
+    "TaggedAddresses": {
+      "lan": "127.0.0.1",
+      "wan": "127.0.0.1"
+    },
+    "Meta": {
+      "consul-network-segment": ""
+    },
+    "CreateIndex": 9,
+    "ModifyIndex": 10
+  }
+]

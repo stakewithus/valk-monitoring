@@ -1,0 +1,30 @@
+{
+  "lcd-terra-127.0.0.1:1321": {
+    "ID": "lcd-terra-127.0.0.1:1321",
+    "Service": "terra-backend",
+    "Tags": [],
+    "Port": 46656,
+    "Address": "127.0.0.1",
+    "Status": "critical",
+    "Notes": "",
+    "Weights": {
+      "Passing": 1,
+      "Warning": 1
+    },
+    "EnableTagOverride": false
+  },
+  "oracle-terra-missing-vote": {
+    "ID": "oracle-terra-missing-vote",
+    "Service": "terra-backend",
+    "Tags": [],
+    "Port": 46656,
+    "Address": "127.0.0.1",
+    "Status": "passing",
+    "Notes": "",
+    "Weights": {
+      "Passing": 1,
+      "Warning": 1
+    },
+    "EnableTagOverride": false
+  }
+}
