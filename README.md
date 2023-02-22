@@ -30,6 +30,9 @@ EOF
 ## Start APM API (tendermint monitoring)
 
 ### Configuration
+- Duplicate app.env.example to app.env
+- Add in twillo, slack, phone numebers to call in app.env for monitoring and calls
+- Rename example.env to .env
 - Add in the projects that you would want to monitor under, include in project name and validator address: `apm/build/config/prod.js`
 - Add in nodes(sentries) to be monitored under: `apm/config.json`
 
