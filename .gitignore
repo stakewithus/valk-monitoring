@@ -6,7 +6,6 @@ node_modules
 */influxdata/*
 
 # local env files
-.env*
 app.env
 
 # Log files

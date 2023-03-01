@@ -1,6 +1,6 @@
 {
   "name": "valk-client",
-  "version": "1.4.31",
+  "version": "latest",
   "private": true,
   "scripts": {
     "serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve",
