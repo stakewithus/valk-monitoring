@@ -96,7 +96,7 @@ services:
   consul:
     image: consul:1.6.2
     network_mode: "host"
-    command: consul agent -dev -config-dir=/consul/config -bind 0.0.0.0
+    command: consul agent -dev -config-dir=/consul/config
     volumes:
       - ./apm//consul-config.json:/consul/config/config.json
   

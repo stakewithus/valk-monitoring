@@ -16,7 +16,6 @@ import * as twoFa from '../common/two-fa';
 const get = async (username) => {
   try {
     const user = await vault()(`/v1/auth/userpass/users/${encodeUsername(username)}`, 'GET')({});
-    console.log(user);
     if (!user.data) return null;
     const entity = await getUserEntity(username);
     return {
@@ -101,8 +100,6 @@ const list = async () => {
 
 const login = async (username, password, verificationCode) => {
   const userEntity = await getUserEntity(username);
-  console.log(userEntity);
-  console.log(username);
   const userMetadata = (userEntity && userEntity.data && userEntity.data.metadata) || {};
   let logInAttemptsLeft = userMetadata.logInAttemptsLeft || Constant.MAX_LOGIN_ATTEMPTS;
   let {

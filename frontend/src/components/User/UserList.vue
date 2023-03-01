@@ -18,7 +18,7 @@
       <template v-slot:cell(index)="data">{{ data.index + 1 }}</template>
       <template v-slot:cell(username)="data">{{ data.value }}</template>
       <template v-slot:cell(policies)="data">{{ data.value && data.value.join(', ') }}</template>
-      <template v-slot:cell(isEmailVerified)="data">{{ data.value }}</template>
+      <!-- <template v-slot:cell(isEmailVerified)="data">{{ data.value }}</template> -->
       <template v-slot:cell(actions)="data">
         <b-button variant="link" @click="$emit('onDeleteUser',data.item)">Delete</b-button>
         <b-button variant="link" :to="{name: 'user-edit',params:{id: data.item.username}}">Edit</b-button>
@@ -49,7 +49,7 @@ export default {
         "index",
         { key: "username", label: "Username", sortable: false },
         { key: "policies", label: "Policies", sortable: false },
-        { key: "isEmailVerified", label: "Email Verified?", sortable: false },
+        // { key: "isEmailVerified", label: "Email Verified?", sortable: false },
         {
           key: "actions",
           label: "",

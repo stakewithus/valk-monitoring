@@ -2,6 +2,7 @@
 node_modules
 /dist
 */vault/*
+!backend/vault/config
 */influxdata/*
 
 # local env files
