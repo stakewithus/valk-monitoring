@@ -1,7 +1,7 @@
 # Valk-Monitoring
 
 ## Requirements
-- Node,docker installed
+- Node v18.4, docker installed
 
 ## Summary 
 - Frontend -> frontend interface of valk
@@ -28,10 +28,8 @@
 - `docker-compose exec vault /bin/sh`
 - `vault operator init`
 - Take note of the root token and all the unseal tokens
-- Replace VAULT_TOKEN in app.env with the root token
 - `vault operator unseal UNSEAL_TOKENS` x3
 - Ensure vault is unseal by checking `vault status`
-- `export VAULT_TOKEN='ROOT_TOKEN'`
 - `vault login (use root token provided when init of vault)` and ensure its unsealed 
 - `vault auth enable userpass`
 - `(
@@ -45,7 +43,13 @@ EOF
 - Encode username from string to hex: `echo -n "admin@test.com" | od -A n -t x1 | sed 's/ *//g'` Remember the encoded username
 - "user" as encoded username,"pw" as plaintext password `vault write auth/userpass/users/[user] password=[pw] policies=app-policy`
 - exit the docker container command line
+- Replace VAULT_TOKEN in app.env with the root token
 - `docker-compose up -d --build`
+
+### Configuration
+- Replace frontend/src/config/dev.js with the correct ip address
+- Ensure vault is unsealed. If its sealed, unseal it
+
 
 ## Login in
 - Navigate to `<ip address>:8080`and login using the details created in the backend
