@@ -40,6 +40,7 @@ EOF
 - Ensure node is install
 - `npm install &*& npm run build`
 - `docker-compose up -d --build`
+- `curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE "apm"'`
 
 
 ## Login in
