@@ -47,7 +47,7 @@ const createAdminAccount = ({
       createUserEntity(username, {
         metadata: {
           username,
-          isEmailVerified: 'true',
+          // isEmailVerified: 'true',
           is2FAEnabled: 'false',
         },
       });

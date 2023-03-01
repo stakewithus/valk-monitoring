@@ -16,12 +16,13 @@ import * as twoFa from '../common/two-fa';
 const get = async (username) => {
   try {
     const user = await vault()(`/v1/auth/userpass/users/${encodeUsername(username)}`, 'GET')({});
+    console.log(user);
     if (!user.data) return null;
     const entity = await getUserEntity(username);
     return {
       ...user.data,
       ...(entity.data ? (entity.data.metadata || {}) : {}),
-      isEmailVerified: (entity.data && entity.data.metadata && entity.data.metadata.isEmailVerified) || 'false',
+      // isEmailVerified: (entity.data && entity.data.metadata && entity.data.metadata.isEmailVerified) || 'false',
       is2FAEnabled: (entity.data && entity.data.metadata && entity.data.metadata.is2FAEnabled) || 'false',
     };
   } catch (e) {
@@ -40,7 +41,7 @@ const create = async (username, password, policies) => {
   createUserEntity(username, {
     metadata: {
       username,
-      isEmailVerified: 'false',
+      // isEmailVerified: 'false',
       is2FAEnabled: 'false',
     },
   });
@@ -92,7 +93,7 @@ const list = async () => {
       return {
         username: decodeUsername(username),
         policies: userInfo.data.policies,
-        isEmailVerified: (entity.data && entity.data.metadata && entity.data.metadata.isEmailVerified) || 'false',
+        // isEmailVerified: (entity.data && entity.data.metadata && entity.data.metadata.isEmailVerified) || 'false',
       };
     });
   return Promise.all(promises);
@@ -107,6 +108,14 @@ const login = async (username, password, verificationCode) => {
   let {
     lockedUntil,
   } = userMetadata;
+
+  // check if email is verified	
+  // if (userMetadata.isEmailVerified !== 'true') {
+  //   return {	
+  //     code: 'EMAIL_NOT_VERIFIED',	
+  //     error: 'Email is not verified.',	
+  //   };	
+  // }
 
   // check login attempts
   if (lockedUntil && lockedUntil > new Date().valueOf()) {
@@ -191,11 +200,11 @@ const sendEmailVerification = async (username) => {
       error: 'The email you provided does not exist in our system.',
     };
   }
-  if (user.isEmailVerified === 'true') {
-    return {
-      error: 'Your email was already verified.',
-    };
-  }
+  // if (user.isEmailVerified === 'true') {
+  //   return {
+  //     error: 'Your email was already verified.',
+  //   };
+  // }
   try {
     return mailer.sendEmailVerification(username);
   } catch (error) {
@@ -208,13 +217,13 @@ const sendEmailVerification = async (username) => {
 const verifyEmail = async (username) => {
   const user = await get(username);
   if (!user) return null;
-  if (user.isEmailVerified !== 'true') {
-    await updateUserEntity(username, {
-      metadata: {
-        isEmailVerified: 'true',
-      },
-    });
-  }
+  // if (user.isEmailVerified !== 'true') {
+  //   await updateUserEntity(username, {
+  //     metadata: {
+  //       isEmailVerified: 'true',
+  //     },
+  //   });
+  // }
   return {
     ok: true,
   };
@@ -298,11 +307,11 @@ const sendForgotPasswordEmail = async (username) => {
       error: 'The email you provided does not exist in our system.',
     };
   }
-  if (user.isEmailVerified !== 'true') {
-    return {
-      error: 'Email is not verified.',
-    };
-  }
+  // if (user.isEmailVerified !== 'true') {
+  //   return {
+  //     error: 'Email is not verified.',
+  //   };
+  // }
   try {
     return mailer.sendForgotPasswordEmail(username);
   } catch (error) {
@@ -319,11 +328,11 @@ const resetPassword = async (username, password) => {
       error: 'User not found',
     };
   }
-  if (user.isEmailVerified !== 'true') {
-    return {
-      error: 'Email is not verified.',
-    };
-  }
+  // if (user.isEmailVerified !== 'true') {
+  //   return {
+  //     error: 'Email is not verified.',
+  //   };
+  // }
   return update(username, password);
 };
 
@@ -337,11 +346,11 @@ const changePassword = async (username, {
       error: 'User not found',
     };
   }
-  if (user.isEmailVerified !== 'true') {
-    return {
-      error: 'Email is not verified.',
-    };
-  }
+  // if (user.isEmailVerified !== 'true') {
+  //   return {
+  //     error: 'Email is not verified.',
+  //   };
+  // }
   const ret = await login(username, currentPassword);
   if (!ret || Util.isNotEmptyArray(ret.errors)) {
     return {

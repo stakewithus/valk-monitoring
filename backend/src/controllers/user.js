@@ -94,7 +94,7 @@ const get = (req, res) => async () => {
       user: user ? {
         username,
         policies: user.policies,
-        isEmailVerified: user.isEmailVerified,
+        // isEmailVerified: user.isEmailVerified,
       } : null,
     });
   } catch (e) {
@@ -117,7 +117,7 @@ const getOwnInfo = (req, res) => async () => {
       profile: user ? {
         username,
         policies: user.policies,
-        isEmailVerified: user.isEmailVerified,
+        // isEmailVerified: user.isEmailVerified,
         is2FAEnabled: user.is2FAEnabled,
       } : null,
     });

@@ -17,7 +17,7 @@ path "auth/userpass/users/*" {
   capabilities = ["create", "update", "read", "delete"]
 }
 EOF
-) | sudo tee app-policy`
+) | sudo tee app-policy.hcl`
 - `vault policy write app-policy app-policy.hcl`
 - Encode username from string to hex: `echo -n "admin@test.com" | od -A n -t x1 | sed 's/ *//g'` Remember the encoded username
 - "user" as encoded username,"pw" as plaintext password `vault write auth/userpass/users/[user] password=[pw] policies=app-policy`

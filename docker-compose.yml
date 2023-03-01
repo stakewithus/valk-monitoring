@@ -12,11 +12,20 @@ services:
     image: vault
     env_file: ./backend/app.env
     volumes:
-        - ./backend/vault/config:/vault/config
-        - ./backend/vault/policies:/vault/policies
-        - ./backend/vault/data:/vault/data
+      - ./backend/vault/config:/vault/config
+      - ./backend/vault/policies:/vault/policies
+      - ./backend/vault/data:/vault/data
+      - ./backend/vault/file:/vault/file
     ports:
-      - "8200:8200"
+      - 8200:8200
+    environment:
+      - VAULT_ADDR=http://0.0.0.0:8200
+      - VAULT_API_ADDR=http://0.0.0.0:8200
+      - VAULT_ADDRESS=http://0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
+    command: vault server -config=/vault/config/vault.hcl
+
   backend-server:
     image: valk-server
     env_file: ./backend/app.env
