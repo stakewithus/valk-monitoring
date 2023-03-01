@@ -98,6 +98,6 @@ services:
     network_mode: "host"
     command: consul agent -dev -config-dir=/consul/config
     volumes:
-      - ./apm//consul-config.json:/consul/config/config.json
+      - ./apm/consul-config.json:/consul/config/config.json
   
   
