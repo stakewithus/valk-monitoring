@@ -284,20 +284,20 @@ var updateJob = function updateJob(nodeList, schd, bend) {
   };
 };
 
-var addTerraBackend = async function addTerraBackend(nodeHost, consulPort) {
-  var bend = (0, _api2.default)(nodeHost, consulPort).Api;
-  var lcdList = process.env.TERRA_LCD.split(',');
-  await _promise2.default.all(lcdList.map(async function (lcd) {
-    var _lcd$split = lcd.split(':'),
-        _lcd$split2 = (0, _slicedToArray3.default)(_lcd$split, 2),
-        host = _lcd$split2[0],
-        port = _lcd$split2[1];
+// var addTerraBackend = async function addTerraBackend(nodeHost, consulPort) {
+//   var bend = (0, _api2.default)(nodeHost, consulPort).Api;
+//   var lcdList = process.env.TERRA_LCD.split(',');
+//   await _promise2.default.all(lcdList.map(async function (lcd) {
+//     var _lcd$split = lcd.split(':'),
+//         _lcd$split2 = (0, _slicedToArray3.default)(_lcd$split, 2),
+//         host = _lcd$split2[0],
+//         port = _lcd$split2[1];
 
-    await _lcdBackend2.default.addService(bend)('terra', host, port);
-    return _lcdBackend2.default.addCheck(bend)('terra', host, port);
-  }));
-  return _oracleBackend2.default.addCheck(bend);
-};
+//     await _lcdBackend2.default.addService(bend)('terra', host, port);
+//     return _lcdBackend2.default.addCheck(bend)('terra', host, port);
+//   }));
+//   return _oracleBackend2.default.addCheck(bend);
+// };
 
 var syncProd = async function syncProd(nodeHost, consulPort, prodConfigFile) {
   await addTerraBackend(nodeHost, consulPort);
