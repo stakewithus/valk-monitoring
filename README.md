@@ -18,10 +18,11 @@
 - Add in twillo, slack, phone numebers to call in app.env for monitoring and calls
 - Add in the projects that you would want to monitor under, include in project name and validator address: `apm/build/config/prod.js`
 - Add in nodes(sentries) to be monitored under: `apm/config.json`
-- Run build.sh to prebuild image for apm: `./valk-monitoring/build.sh`
+- Run build.sh to prebuild image for apm: `./valk-monitoring/build.sh apm`
 
 ### Start frontend, backend + other services
 - Duplicate app.env.example in the backend folder into app.env and add in SENDGRID API details if needed. Take note of the vault token as this will need to be replaced once the vault service is up
+- If needed, add in the mainnet Name and mainnet Network name into `frontend/mainnet.json` for networks that are considered mainnet to be displayed in the dashboard
 - `docker-compose up -d --build`
 - Create db in influx db: `curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE "apm"'`
 
