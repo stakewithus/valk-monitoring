@@ -41,6 +41,13 @@
     }
   ],
   "deRegisterServices": {
+    "cosmos": [],
+    "iov": [],
+    "kava": [],
+    "commit": [],
+    "certik": [],
+    "band": [],
+    "sentinel": []
   },
   "heathChecksThresholdLimits": {
     "lastBlockTime": {

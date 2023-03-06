@@ -13,11 +13,12 @@
 ## Usage
 
 ### APM monitoring
+- Head into apm folder
 - Duplicate app.env.example to app.env
 - Add in twillo, slack, phone numebers to call in app.env for monitoring and calls
 - Add in the projects that you would want to monitor under, include in project name and validator address: `apm/build/config/prod.js`
 - Add in nodes(sentries) to be monitored under: `apm/config.json`
-- Run build.sh to prebuild image for apm: `./build.sh`
+- Run build.sh to prebuild image for apm: `./valk-monitoring/build.sh`
 
 ### Start frontend, backend + other services
 - Duplicate app.env.example in the backend folder into app.env and add in SENDGRID API details if needed. Take note of the vault token as this will need to be replaced once the vault service is up
