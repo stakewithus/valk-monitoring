@@ -1,12 +1,12 @@
 {
   "name": "valk-client",
-  "version": "1.4.31",
+  "version": "1.4.0",
   "private": true,
   "scripts": {
     "serve": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "docker": "docker build -t app-valk-client:$npm_package_version .",
+    "docker": "docker build -t app-valk-client:$npm_package_version . --no-cache",
     "deploy": "PASSWORD=$(aws ecr get-login-password 2>&1) && docker login -u AWS -p $PASSWORD https://218989195752.dkr.ecr.ap-southeast-1.amazonaws.com && docker tag app-valk-client:$npm_package_version 218989195752.dkr.ecr.ap-southeast-1.amazonaws.com/app-valk-client:$npm_package_version && docker push 218989195752.dkr.ecr.ap-southeast-1.amazonaws.com/app-valk-client:$npm_package_version"
   },
   "dependencies": {
