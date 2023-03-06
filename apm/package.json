@@ -1,6 +1,6 @@
 {
   "name": "apm-agent",
-  "version": "latest",
+  "version": "1.4.50",
   "description": "APM Agent for blockchain clients",
   "main": "build/app.js",
   "scripts": {
