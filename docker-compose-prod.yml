@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  frontend:
+    image: app-valk-client:1.4.0
+    ports:
+      - 8080:80
+  vault:
+    image: vault
+    env_file: ./backend/app.env
+    volumes:
+      - ./backend/vault/config:/vault/config
+      - ./backend/vault/policies:/vault/policies
+      - ./backend/vault/data:/vault/data
+      - ./backend/vault/file:/vault/file
+    ports:
+      - 8200:8200
+    environment:
+      - VAULT_ADDR=http://0.0.0.0:8200
+      - VAULT_API_ADDR=http://0.0.0.0:8200
+      - VAULT_ADDRESS=http://0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
+    command: vault server -config=/vault/config/vault.hcl
+
+  backend-server:
+    image: valk-server
+    env_file: ./backend/app.env
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+    depends_on:
+      - vault
+    ports:
+      - "5001:3001"

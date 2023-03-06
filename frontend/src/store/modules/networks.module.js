@@ -150,7 +150,7 @@ const actions = {
           networks: response
         });
       }
-    }, 1000);
+    }, 10000);
   },
   stopLiveUpdateUsingPolling({ state }) {
     clearInterval(state.intervalId);
