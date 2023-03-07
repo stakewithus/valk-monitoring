@@ -2,8 +2,8 @@
   "nodes": [
      {
       "id": "7f1714b5-8d15-4679-9c47-d154d7b70da9",
-      "address": "65.108.71.202",
-      "region": "swu-hetzner-test-03",
+      "address": "IPADRESS",
+      "region": "SERVER_NAME",
       "projects": [
         {
           "name": "bandchain-testnet6",
@@ -40,9 +40,6 @@
       ]
     }
   ],
-  "deRegisterServices": {
-    "cosmos-testnet": []
-  },
   "heathChecksThresholdLimits": {
     "lastBlockTime": {
       "warning": 30,

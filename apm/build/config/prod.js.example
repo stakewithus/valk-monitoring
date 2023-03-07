@@ -1,0 +1,15 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  projectSettings: {
+    'bcl-cosmos-testnet': {
+      'cosmos-testnet': [{
+        name: 'cosmos-testnet',
+        address: 'B9E5CBD6E8C7539A9591F3DB9754298F3CC67C4E'
+      }]
+    }
+  }
+};

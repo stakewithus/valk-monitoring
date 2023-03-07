@@ -17,13 +17,14 @@
 - Head into apm folder
 - Duplicate app.env.example to app.env
 - Add in twillo, slack, phone numebers to call in app.env for monitoring and calls
-- Add in the projects that you would want to monitor under, include in project name and validator address: `apm/build/config/prod.js` and `./valk-monitoring/build.sh apm`
-- Add in nodes(sentries) to be monitored under: `apm/config.json` and `docker-compose up -d`
+- Add in the projects that you would want to monitor under, include in project name and validator address: `apm/build/config/prod.js`(Duplicate prod.js.example) and `./valk-monitoring/build.sh apm`
+- Add in nodes(sentries) to be monitored under: `apm/config.json`(Duplicate config.json.example) and `docker-compose up -d`
 - Run build.sh to prebuild image for apm: `./valk-monitoring/build.sh apm`
 - To remove projects and sentries, run `apm/remove_services.sh PROJECT REGION`. `PROJECT` and `REGION` indicates the project name and region respectively which is indicated in `apm/config.json`
 
 ### Start frontend, backend + other services
 - Duplicate app.env.example in the backend folder into app.env and add in SENDGRID API details if needed. Take note of the vault token as this will need to be replaced once the vault service is up
+- Chnge the ipaddress under `frontend/src/config/dev.js` to your current IP address
 - If needed, add in the mainnet Name and mainnet Network name into `frontend/mainnet.json` for networks that are considered mainnet to be displayed in the dashboard
 - `docker-compose up -d --build`
 - Create db in influx db: `curl -XPOST 'http://localhost:8086/query' --data-urlencode 'q=CREATE DATABASE "apm"'`
